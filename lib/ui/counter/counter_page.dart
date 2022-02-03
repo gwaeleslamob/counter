@@ -17,7 +17,7 @@ class CounterPage extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          const CounterBody(),
+          CounterBody(),
           Align(
             alignment: Alignment.bottomRight,
             child: Padding(

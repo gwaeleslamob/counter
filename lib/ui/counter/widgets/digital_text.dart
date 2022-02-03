@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class DigitalText extends StatelessWidget {
-
   const DigitalText({
     Key? key,
     required this.icon,

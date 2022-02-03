@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paola/ui/about/about_page.dart';
 import 'package:paola/ui/counter/counter_page.dart';
+import 'package:paola/ui/splashscreen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      initialRoute: '/counter',
+      initialRoute: '/splash',
       routes: {
+        '/splash': (context) => const SplashScreen(),
         '/counter': (context) => const CounterPage(
               title: 'Hello world',
             ),
