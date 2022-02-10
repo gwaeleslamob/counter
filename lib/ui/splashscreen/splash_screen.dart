@@ -22,6 +22,6 @@ class SplashScreen extends StatelessWidget {
   Future<void> _navigateLater(BuildContext context) async {
     await Future.delayed(const Duration(seconds: 1));
 
-    Navigator.of(context).pushReplacementNamed('/counter');
+    Navigator.of(context).pushReplacementNamed('/albums');
   }
 }
