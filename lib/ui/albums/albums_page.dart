@@ -19,7 +19,7 @@ class AlbumsPage extends StatelessWidget {
           return notifer.value.when(
             initial: () => const LoaderWidget(),
             loading: () => const LoaderWidget(),
-            loaded: (albums) => AlbumWidget(
+            loaded: (albums) => AlbumListWidget(
               albums: albums,
             ),
             error: () => const err.ErrorWidget(),

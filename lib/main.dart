@@ -6,6 +6,7 @@ import 'package:paola/data/albums/repositories/albums_repository.dart';
 import 'package:paola/ui/about/about_page.dart';
 import 'package:paola/ui/albums/albums_page.dart';
 import 'package:paola/ui/counter/counter_page.dart';
+import 'package:paola/ui/photos/photos_page.dart';
 import 'package:paola/ui/splashscreen/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MainProviders(
+    return _MainProviders(
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -29,6 +30,12 @@ class MyApp extends StatelessWidget {
         routes: {
           '/splash': (context) => const SplashScreen(),
           '/albums': (context) => const AlbumsPage(),
+          '/photos': (context) {
+            final albumId = ModalRoute.of(context)!.settings.arguments as int;
+            return PhotosPage(
+              albumId: albumId,
+            );
+          },
           '/counter': (context) => const CounterPage(
                 title: 'Hello world',
               ),
@@ -39,8 +46,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MainProviders extends StatelessWidget {
-  const MainProviders({
+class _MainProviders extends StatelessWidget {
+  const _MainProviders({
     Key? key,
     required this.child,
   }) : super(key: key);

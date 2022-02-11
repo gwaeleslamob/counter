@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:paola/data/albums/entities/album.dart';
 
-class AlbumWidget extends StatelessWidget {
-  const AlbumWidget({
+class AlbumListWidget extends StatelessWidget {
+  const AlbumListWidget({
     Key? key,
     required this.albums,
   }) : super(key: key);
@@ -15,6 +15,10 @@ class AlbumWidget extends StatelessWidget {
       itemCount: albums.length,
       itemBuilder: (context, index) => ListTile(
         title: Text(albums[index].title ?? 'no title'),
+        onTap: () => Navigator.of(context).pushNamed(
+          '/photos',
+          arguments: albums[index].id,
+        ),
       ),
     );
   }
